@@ -1,0 +1,36 @@
+* { box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; }
+body { background: #f0f2f5; color: #1c1e21; display: flex; justify-content: center; min-height: 100vh; padding: 20px; }
+
+.app-container { width: 100%; max-width: 900px; }
+.navbar { display: flex; justify-content: space-between; align-items: center; background: #2c3e50; color: white; padding: 15px 20px; border-radius: 8px 8px 0 0; }
+.content { background: white; padding: 25px; border-radius: 0 0 8px 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+.card { display: flex; flex-direction: column; gap: 15px; }
+.hidden { display: none !important; }
+.subtitle { font-size: 0.85rem; color: #606770; }
+
+.form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+input, select { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; }
+
+.btn { padding: 10px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+.btn-primary { background: #1877f2; color: white; }
+.btn-secondary { background: #e4e6eb; color: #050505; }
+.btn-success { background: #42b72a; color: white; }
+
+.grid-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+.quiz-card { border: 1px solid #ddd; padding: 15px; border-radius: 6px; background: #fafafa; }
+
+.review-item { border: 1px solid #e0e0e0; padding: 12px; border-radius: 6px; margin-bottom: 10px; }
+.review-item.correct { border-left: 5px solid #2e7d32; background: #f1f8e9; }
+.review-item.incorrect { border-left: 5px solid #c62828; background: #ffebee; }
+
+.tab-header { display: flex; gap: 10px; border-bottom: 2px solid #ddd; margin-bottom: 15px; }
+.tab-btn { background: none; border: none; padding: 10px 15px; cursor: pointer; font-weight: bold; color: #65676b; }
+.tab-btn.active { color: #1877f2; border-bottom: 3px solid #1877f2; }
+
+.data-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.data-table th, .data-table td { border: 1px solid #ddd; padding: 10px; text-align: left; font-size: 0.9rem; }
+.data-table th { background: #f5f6f7; }
+
+.q-builder-box { background: #f7f8fa; border: 1px solid #d0d7de; padding: 15px; border-radius: 6px; margin-bottom: 15px; }
+.button-row { display: flex; justify-content: space-between; }

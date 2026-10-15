@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Exam & Assessment Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <header class="navbar">
+      <h2>Examination Portal</h2>
+      <div id="user-badge" class="hidden">
+        <span id="user-display"></span>
+        <button id="logout-btn" class="btn btn-secondary">Logout</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- 1. Login View -->
+      <section id="view-login" class="card">
+        <h3>Portal Login</h3>
+        <p class="subtitle">Default Logins — Admin: <code>admin</code> / <code>admin123</code> | Student: <code>student1</code> / <code>student123</code></p>
+        <form id="login-form">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" id="login-username" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="login-password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+      </section>
+
+      <!-- 2. Student Dashboard View -->
+      <section id="view-student" class="card hidden">
+        <h3>Available Examinations</h3>
+        <div id="quiz-list" class="grid-list"></div>
+      </section>
+
+      <!-- 3. Exam View -->
+      <section id="view-exam" class="card hidden">
+        <h3 id="exam-title">Exam</h3>
+        <form id="exam-form">
+          <div id="exam-questions"></div>
+          <button type="submit" class="btn btn-success">Submit Answers</button>
+        </form>
+      </section>
+
+      <!-- 4. Student Results Breakdown View -->
+      <section id="view-student-result" class="card hidden">
+        <h3>Exam Feedback & Score Breakdown</h3>
+        <div id="summary-card" class="result-summary"></div>
+        <h4>Question Review</h4>
+        <div id="questions-review"></div>
+        <button onclick="showView('view-student')" class="btn btn-primary">Back to Dashboard</button>
+      </section>
+
+      <!-- 5. Admin Dashboard View -->
+      <section id="view-admin" class="card hidden">
+        <div class="tab-header">
+          <button class="tab-btn active" onclick="switchAdminTab('create')">Create New Quiz</button>
+          <button class="tab-btn" onclick="switchAdminTab('results')">Student Analytics & Scores</button>
+        </div>
+
+        <!-- Admin Tab A: Create Quiz -->
+        <div id="admin-tab-create">
+          <form id="create-quiz-form">
+            <div class="form-group">
+              <label>Quiz Title</label>
+              <input type="text" id="quiz-title-input" placeholder="e.g., Database Systems Unit 1" required>
+            </div>
+            
+            <hr>
+            <h4>Questions Editor</h4>
+            <div id="admin-questions-builder"></div>
+
+            <div class="button-row">
+              <button type="button" id="add-question-btn" class="btn btn-secondary">+ Add Question</button>
+              <button type="submit" class="btn btn-success">Publish Quiz</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Admin Tab B: View All Results -->
+        <div id="admin-tab-results" class="hidden">
+          <h4>Submitted Student Scores</h4>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Quiz Title</th>
+                <th>Score</th>
+                <th>Percentage</th>
+                <th>Submission Time</th>
+              </tr>
+            </thead>
+            <tbody id="results-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
