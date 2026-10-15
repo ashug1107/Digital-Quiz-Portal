@@ -1,0 +1,13 @@
+{
+  "name": "quiz-portal-pro",
+  "version": "2.0.0",
+  "description": "Multi-Role Online Examination & Analytics Portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "sql.js": "^1.11.0"
+  }
+}
